@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model Producto {
+  id Int @id @default(autoincrement())
+  nombre String
+  precio Float
+  imagen String
+  categoria Categoria @relation( fields: [categoriaId], references: [id])
+  //categoria se va a relacionar con la tabla Categoria (de abajo) y relation es una funcion para relacionar un campo
+  categoriaId Int
+
+}
+model Categoria {
+  id Int @id @default(autoincrement())
+  nombre String
+  icono String
+  productos Producto[] //con el arreglo decimos que va a ser multiples
+
+}
