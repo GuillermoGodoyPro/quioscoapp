@@ -20,10 +20,20 @@ model Producto {
   categoriaId Int
 
 }
+
 model Categoria {
   id Int @id @default(autoincrement())
   nombre String
   icono String
   productos Producto[] //con el arreglo decimos que va a ser multiples
+
+}
+
+model Orden {
+  id Int @id @default(autoincrement())
+  nombre String
+  fecha String
+  total Float
+  pedido Json
 
 }
