@@ -1,31 +1,29 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import { PrismaClient } from '@prisma/client'
+import Layout from "../layout/Layout";
+import Head from "next/head";
+import Image from "next/image";
 
-const inter = Inter({ subsets: ['latin'] })
+/* import { Inter } from "next/font/google";
+import { PrismaClient } from "@prisma/client"; */
 
-export default function Home({categorias}) {
-  
-  console.log(categorias);
-  return(
-    <div className='bg-red-600 '>
 
-      
-      <h1>Next.js</h1>
+export default function Home() {
 
-    </div>
-  ) 
+  return (
+    <Layout>
+      Inicio
+    </Layout>
+  );
 }
 
-export const getServerSideProps = async () =>{
+/* export const getServerSideProps = async () => {
   const prisma = new PrismaClient();
-  
+
   const categorias = await prisma.categoria.findMany();
 
   return {
     props: {
       categorias,
-    }
-  }
-}
+    },
+  };
+};
+ */
