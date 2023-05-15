@@ -5,7 +5,6 @@ import Image from "next/image";
 /* import { Inter } from "next/font/google";
 import { PrismaClient } from "@prisma/client"; */
 
-
 export default function Home() {
 
   return (
@@ -14,6 +13,8 @@ export default function Home() {
     </Layout>
   );
 }
+
+
 
 /* export const getServerSideProps = async () => {
   const prisma = new PrismaClient();
